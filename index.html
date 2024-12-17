@@ -4,40 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarjeta de Regalo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #569171;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #74b49b, #569171);
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
         }
         .card {
             background: white;
             width: 350px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
             padding: 20px;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
         }
         .card img {
-            width: 150px;
-            margin-bottom: 10px;
+            width: 120px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: zoomIn 1s ease-in-out;
         }
         .card h1 {
-            color: #4CAF50;
-            font-size: 24px;
+            color: #62c565;
+            font-size: 26px;
+            margin: 10px 0;
+        }
+        .card h3 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 20px;
+            animation: slideIn 1.2s ease-out;
         }
         .card p {
             font-size: 16px;
             color: #555;
+            line-height: 1.5;
         }
         .highlight {
             font-size: 18px;
             font-weight: bold;
-            color: #333;
+            color: #0a525f;
         }
         .footer {
             margin-top: 20px;
@@ -47,20 +62,36 @@
         .footer span {
             color: #4CAF50;
         }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
     </style>
 </head>
 <body>
     <div class="card">
-        <!-- Logo de la escuela -->
         <img src="WhatsApp Image 2024-12-16 at 11.20.32.jpeg" alt="Logo Autoescuela Cars">
         
-        <h1> ¡Feliz Cumpleaños Juan Bautista! </h1> 
+        <h1>¡Feliz Cumpleaños Juan Bautista!</h1>
         <h3>Te amamos! </h3>
-        <p>Tu mama te regala  <span class="highlight">5 clases de manejo</span> para que comiences en esta nueva etapa.</p>
-        <p><strong>Válido hasta: 17/01/25</strong> <span class="highlight"></span></p>
+        <p>Tu mamá te regala <span class="highlight">5 clases de manejo</span> para que comiences en esta nueva etapa.</p>
+        <p><strong>Válido hasta: 17/01/25</strong></p>
+
         <div class="footer">
-           
-            Escuela de Manejo <strong>Cars Escuela Oficial </strong>
+        
+            Escuela de Manejo <strong>Cars Escuela Oficial</strong>
         </div>
     </div>
 </body>
